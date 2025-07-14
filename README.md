@@ -13,3 +13,10 @@ To prevent double-counting of these reads, secondary (0x100) and supplementary (
 Because all three restriction enzyme cut sites were located in the second half of the mitochondrial genome, primary alignments of junction-spanning reads generally originated in the first half (starting near position 1 and ending at the enzyme-specific cut site).
 
 All analyses that follow have been done on Primary alignments only. 
+
+All bioinformatic analyses were conducted using Python 3. Data handling and visualization were performed with a combination of open-source packages: pysam for BAM file parsing, numpy and pandas for numerical computations and data organization, and matplotlib and seaborn for generating plots.
+
+Fragment length distributions were generated using pysam and matplotlib. Aligned reads were extracted from each BAM file (enzyme-treated, sheared, and untreated control) and only reads mapped to the mitochondrial chromosome ("chrM") were included. Read lengths were retrieved using the query_length attribute of each read. Histograms were plotted to visualize the distribution of mtDNA fragment sizes for each sample. A reference line at 16,569 bp was added to indicate full-length mitochondrial genomes. Because all reads had been filtered to include only primary alignments, the resulting distributions reflect representative molecule lengths while minimizing overcounting.
+
+Coverage depth across the mitochondrial genome was calculated using pysam.pileup, which provides per-base read depth. For each sample, coverage was calculated across the full length of chrM. Plots were generated using matplotlib, with drop-offs in coverage observed at enzyme-specific cut sites. These drop-offs were used to evaluate the relative efficiency of each enzyme. For each cut site, the average coverage within a 100 bp window upstream ("before") and downstream ("after") of the cut was calculated using numpy. The absolute difference in coverage before and after the cut site was used as an indication for enzyme cutting efficiency.
+
