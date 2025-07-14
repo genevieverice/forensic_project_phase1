@@ -2,7 +2,7 @@
 This repository contains analysis scripts and documentation for a proof-of-concept experiment assessing mitochondrial DNA (mtDNA) degradation via enzyme digestion and nanopore sequencing.
 
 Folder /Scripts contains python and bash scripts for data analysis for phase 1 of my project
-Folder / contains python scripts that were helpful during data analysis but are not so meaningful to report, or were reported using a modified version. These may be helpful for something else in the future.
+Folder /didnt_use_scripts contains python scripts that were helpful during data analysis but are not so meaningful to report, or were reported using a modified version. These may be helpful for something else in the future.
 
 Mitochondrial DNA (mtDNA) is circular and commonly used in forensic analyses. Estimating time since deposition (TsD) of blood is challenging. This study explores enzyme-based linearization methods (BsiWI, PmeI, SnaBI) combined with long-read sequencing to track fragment patterns over time.
 
